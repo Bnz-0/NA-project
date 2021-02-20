@@ -1,0 +1,76 @@
+
+- [~] select a realistic graph (https://snap.stanford.edu/data/p2p-Gnutella08.html)
+
+
+--- ASS1 ---
+analysis of a "realistic" graph: compute the metrics we discussed in class and draw some conclusions on the type of the underlying network
+
+- [x] report
+	- [x] plot the graph
+	- [x] collect the metrics
+	- [x] write the fucking report
+- [x] compute metrics
+	- [x] #nodes & #edges
+	- [x] diameter (pseudo)
+	- [x] <K>
+	- [x] density
+	- [x] degree distribution
+	- [x] global clustering
+- [x] find the best node
+	- [x] rank
+	- [x] degrees
+	- [x] closeness
+	- [x] betweenness
+	- [x] local clustering
+- [ ] other stuff
+	- [ ] average shortest path
+	- [x] giant components
+
+--- ASS2 ---
+investigate the robustness of networks by simulating random failures and target attacks:
+
+Part 1: Use synthetic graphs
+1.	In the first part, you can use some graphs obtained by using the Networx library or the library of your choice.
+2.	For each selected graph (max 2 or 3) you can perform different types of attack: turn off nodes at random, turn off the highest degree nodes, those with the highest pagerank, those with the highest betweenness, ...
+3.	After each removal, compute new measures, for example the size of the giant component or the diameter of the network and then plot these measures with respect to node failures.
+4.	Be careful, some of the functions you will use work only for undirected, connected graphs and therefore you need to instrument your code to work on the entire graph first, and on the several components after the split of the original graph into smaller clusters.
+
+Part 1 (alternative, new!): Conspiracy in Social Networks
+In a Big Brother society, the thought police wants to follow a "divide and conquer" strategy by fragmenting the social network into isolated components. You belong to the resistance and want to foil their plans. There are rumours that the police wants to detain individuals that have many friends and individuals whose friends tend to know each other. The resistance puts you in charge to decide which individuals to protect: those whose friendship circle is highly interconnected or those with many friends. To decide you simulate two different attacks on your network, by removing (i) the nodes that have the highest clustering coefficient and (ii) the nodes that have the largest degree.
+Study the size of the giant component in function of the fraction of removed nodes for the two attacks on the following networks:
+1.	A network with N = 104 nodes generated with the configuration model (https://en.wikipedia.org/wiki/Configuration_model) and power-law degree distribution with γ = 2.5.
+2.  A network with N = 104 nodes generated with the hierarchical model (https://en.wikipedia.org/wiki/Hierarchical_network_model).
+Which is the most sensitive topological information, clustering coefficient or degree, which, if protected, limits the damage best? Would it be better if all individuals' information (clustering coefficient, degree, etc.) could be kept secret? Why?
+
+Part 2: Use your real graph
+1.	Repeat the same steps described in Part 1 with the realistic graph you have chosen for the 1st assignment.
+
+- [ ] report
+- [x] part1
+	- [x] generate scale-free network
+	- [x] generate hierarchical network
+	- [x] measure the size of the giant component
+	- [x] attacks
+		- [x] remove the nodes that have the HIGHEST CLUSTERING COEFFICIENT
+		- [x] remove the nodes that have the LARGEST DEGREE
+	- [x] strategies of protection
+		- [x] protect the n-best degree
+		- [x] protect the n-best cluster coeff.
+		- [x] protect the n-best rank
+- [x] part2
+
+
+--- ASS3 ---
+Social contagion:
+In this assignment you will investigate the social contagion in a network by implementing the networked coordination game as described this week (see the slides of the lecture).
+
+Part 1: Use synthetic graphs
+1.  In the first part of the exercise you can use the synthetic graphs available in the networkx library or in the library of your choice.
+2.  In order to "see" social contagion you need to generate a graph, define the payoff matrix, and select the random nodes to start the contagion.
+3.  Since it can take some time to tune the parameters, I recommend you to start with small graphs. The video below shows the contagion in the Zachary Karate Club we have seen in class and you can start with this graph as well.
+
+Part 2: Use your real graph
+
+- [x] report
+- [x] part1
+- [x] part2
